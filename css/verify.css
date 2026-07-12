@@ -1,0 +1,127 @@
+/* ==========================================
+            GOOGLE FONT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================
+            VERIFY HERO
+========================================== */
+
+.verify-hero{
+
+    padding:120px 0 80px;
+
+    background:#f8fbff;
+
+}
+
+/* Heading */
+
+.verify-heading{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.verify-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.verify-heading h1{
+
+    font-size:64px;
+
+    color:#0f172a;
+
+    margin-bottom:20px;
+
+}
+
+.verify-heading p{
+
+    font-size:20px;
+
+    color:#64748b;
+
+    line-height:1.8;
+
+}
+
+/* Search */
+
+.verify-search{
+
+    width:820px;
+
+    margin:60px auto 0;
+
+    display:flex;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.verify-search input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:24px;
+
+    font-size:18px;
+
+}
+
+.verify-search button{
+
+    width:180px;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.verify-search button:hover{
+
+    background:#1d4ed8;
+
+}
