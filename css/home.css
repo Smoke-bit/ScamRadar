@@ -470,73 +470,129 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 }
 
-.hero-panel{
+/* ==========================================
+            HERO DASHBOARD
+========================================== */
 
-    position:absolute;
+.hero-right{
 
-    bottom:-20px;
+    display:flex;
 
-    width:320px;
+    justify-content:center;
 
-    background:rgba(255,255,255,.92);
+    align-items:center;
 
-    backdrop-filter:blur(18px);
+}
+
+.dashboard-preview{
+
+    width:420px;
+
+    background:white;
+
+    border-radius:26px;
+
+    padding:30px;
 
     border:1px solid #e2e8f0;
 
-    border-radius:24px;
+    box-shadow:0 35px 70px rgba(37,99,235,.10);
 
-    padding:28px;
-
-    box-shadow:0 25px 55px rgba(0,0,0,.10);
-
-    z-index:30;
+    transition:.35s;
 
 }
 
-.panel-section{
+.dashboard-preview:hover{
 
-    padding:12px 0;
+    transform:translateY(-8px);
 
-}
-
-.panel-section h4{
-
-    margin-bottom:14px;
-
-    font-size:18px;
-
-    color:#0f172a;
+    box-shadow:0 45px 90px rgba(37,99,235,.16);
 
 }
 
-.panel-section p{
+.dashboard-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+.status-dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+}
+
+.dashboard-header h3{
+
+    font-size:22px;
+
+}
+
+.dashboard-divider{
+
+    height:1px;
+
+    background:#e2e8f0;
+
+    margin:25px 0;
+
+}
+
+.dashboard-row{
 
     display:flex;
 
     justify-content:space-between;
 
-    margin-bottom:10px;
+    align-items:center;
+
+    margin-bottom:18px;
+
+    font-size:17px;
+
+}
+
+.dashboard-row span{
 
     color:#64748b;
 
 }
 
-.panel-section span{
+.dashboard-row strong{
 
     color:#2563eb;
 
-    font-weight:700;
+    font-size:24px;
 
 }
 
-.panel-section strong{
+.dashboard-section h4{
 
-    color:#2563eb;
+    margin-bottom:12px;
 
 }
 
-.panel-section small{
+.dashboard-section p{
+
+    color:#334155;
+
+    margin-bottom:8px;
+
+}
+
+.dashboard-section small{
 
     color:#64748b;
 
@@ -544,15 +600,7 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 }
 
-.panel-divider{
 
-    height:1px;
-
-    background:#e2e8f0;
-
-    margin:18px 0;
-
-}
 
 .hero-side-card h4{
 
