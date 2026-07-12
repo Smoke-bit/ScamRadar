@@ -127,6 +127,8 @@ header{
 
     color:#2563eb;
 
+    transform:translateY(-2px);
+
 }
 
 .nav-links a::after{
@@ -327,6 +329,9 @@ header{
 
     margin-bottom:35px;
 
+    transition:.35s;
+
+
 }
 
 .search-box input{
@@ -367,7 +372,7 @@ header{
 
 transform:translateY(-2px);
 
-box-shadow:0 15px 35px rgba(37,99,235,.35);
+box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 }
 
@@ -419,25 +424,27 @@ box-shadow:0 15px 35px rgba(37,99,235,.35);
 
     position:absolute;
 
-    width:420px;
+    width:500px;
+    height:500px;
 
-    height:420px;
+    background:
+    radial-gradient(circle,#60a5fa 0%,transparent 70%);
 
-    background:#3b82f6;
+    opacity:.35;
 
-    filter:blur(140px);
-
-    opacity:.18;
+    filter:blur(90px);
 
     border-radius:50%;
+
+    z-index:1;
 
 }
 
 .shield-box{
 
-    width:230px;
+    width:200px;
 
-    height:230px;
+    height:200px;
 
     border-radius:40px;
 
@@ -449,7 +456,7 @@ box-shadow:0 15px 35px rgba(37,99,235,.35);
 
     align-items:center;
 
-    font-size:90px;
+    font-size:72px;
 
     color:white;
 
@@ -483,25 +490,25 @@ box-shadow:0 15px 35px rgba(37,99,235,.35);
 
 .top-card{
 
-    top:40px;
+    top:20px;
 
-    left:20px;
+    left:-20px;
 
 }
 
 .right-card{
 
-    right:0;
+    right:-40px;
 
-    top:180px;
+    top:170px;
 
 }
 
 .bottom-card{
 
-    left:80px;
+    left:10px;
 
-    bottom:40px;
+    bottom:10px;
 
 }
 
