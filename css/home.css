@@ -410,17 +410,15 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     position:relative;
 
-    width:550px;
+    width:520px;
 
-    height:600px;
+    height:650px;
 
     display:flex;
 
     justify-content:center;
 
-    align-items:center;
-
-    margin:auto;
+    align-items:flex-start;
 
 }
 
@@ -446,11 +444,13 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 .shield-box{
 
-    width:190px;
+    width:200px;
 
-    height:190px;
+    height:200px;
 
-    border-radius:35px;
+    margin-top:40px;
+
+    border-radius:36px;
 
     background:linear-gradient(135deg,#2563eb,#60a5fa);
 
@@ -460,69 +460,97 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     align-items:center;
 
-    font-size:72px;
+    font-size:78px;
 
     color:white;
 
-    box-shadow:0 25px 60px rgba(37,99,235,.25);
+    box-shadow:0 35px 70px rgba(37,99,235,.30);
 
-    z-index:20;
+    z-index:40;
 
 }
 
-.hero-side-card{
+.hero-panel{
 
     position:absolute;
 
-    width:210px;
+    bottom:-20px;
 
-    min-height:140px;
+    width:320px;
 
-    background:white;
+    background:rgba(255,255,255,.92);
 
-    border-radius:18px;
-
-    padding:18px;
+    backdrop-filter:blur(18px);
 
     border:1px solid #e2e8f0;
 
-    box-shadow:0 18px 45px rgba(0,0,0,.08);
+    border-radius:24px;
 
-    animation: float 5s ease-in-out infinite;
+    padding:28px;
 
-}
-
-.leaderboard-card{
-
-    top:0;
-
-    left:-20px;
+    box-shadow:0 25px 55px rgba(0,0,0,.10);
 
     z-index:30;
 
-    animation-delay:0s;
 }
 
-.activity-card{
+.panel-section{
 
-    top:80px;
-
-    right:-30px;
-
-    z-index:30;
-
-    animation-delay:1.5s;
+    padding:12px 0;
 
 }
-.status-card{
 
-    bottom:-10px;
+.panel-section h4{
 
-    left:0;
+    margin-bottom:14px;
 
-    z-index:30;
+    font-size:18px;
 
-    animation-delay:3s;
+    color:#0f172a;
+
+}
+
+.panel-section p{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    color:#64748b;
+
+}
+
+.panel-section span{
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+.panel-section strong{
+
+    color:#2563eb;
+
+}
+
+.panel-section small{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+.panel-divider{
+
+    height:1px;
+
+    background:#e2e8f0;
+
+    margin:18px 0;
 
 }
 
