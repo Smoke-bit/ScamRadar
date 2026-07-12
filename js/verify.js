@@ -39,6 +39,15 @@ async function verify(){
 
         const data = await response.json();
 
+        document.getElementById("entityName").textContent =
+        data.searched;
+
+        document.getElementById("verificationStatus").textContent =
+        "Detected as: " + data.type;
+
+        document.getElementById("riskBadge").textContent =
+        data.type.toUpperCase();
+
         console.log(data);
 
     }
