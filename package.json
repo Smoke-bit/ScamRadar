@@ -1,0 +1,21 @@
+{
+  "name": "scamradar",
+  "version": "1.0.0",
+  "description": "This is a website which helps users avoid potential scams and report them as well",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smoke-bit/ScamRadar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Smoke-bit/ScamRadar/issues"
+  },
+  "homepage": "https://github.com/Smoke-bit/ScamRadar#readme"
+}

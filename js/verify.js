@@ -1,41 +1,52 @@
+console.log("verify.js loaded");
 const verifyBtn = document.getElementById("verifyBtn");
+
 const verifyInput = document.getElementById("verifyInput");
 
-verifyBtn.addEventListener("click", verifyEntity);
+verifyBtn.addEventListener("click", verify);
 
-function verifyEntity(){
+async function verify(){
 
-    const value = verifyInput.value.trim();
+    const input = verifyInput.value.trim();
 
-    if(value===""){
+    if(input===""){
 
-        alert("Please enter something to verify.");
+        alert("Enter something to verify.");
 
         return;
 
     }
 
-    showDemoResult(value);
+    try{
 
-}
+        const response = await fetch("http://localhost:5000/api/verify",{
 
-function showDemoResult(value){
+            method:"POST",
 
-    document.querySelector(".result-header h2").textContent = value;
+            headers:{
 
-    document.querySelector(".result-header p").textContent =
-    "Verification completed.";
+                "Content-Type":"application/json"
 
-    document.querySelector(".risk-badge").textContent = "LOW RISK";
+            },
 
-    document.querySelector(".risk-badge").classList.remove("neutral");
+            body:JSON.stringify({
 
-    document.querySelector(".risk-badge").style.background="#dcfce7";
+                input
 
-    document.querySelector(".risk-badge").style.color="#15803d";
+            })
 
-    document.querySelector(".risk-circle").textContent="8%";
+        });
 
-    document.querySelector(".result-box h1").textContent="0";
+        const data = await response.json();
+
+        console.log(data);
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+    }
 
 }
