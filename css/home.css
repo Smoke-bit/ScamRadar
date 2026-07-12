@@ -929,12 +929,12 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 
 /* ==========================================
-            STATS
+            COMMUNITY STATS
 ========================================== */
 
 .stats{
 
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
 
     color:white;
 
@@ -946,21 +946,33 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:30px;
+    gap:28px;
+
+    margin-top:60px;
 
 }
 
 .stat-box{
 
-    text-align:center;
-
     background:rgba(255,255,255,.08);
 
-    padding:40px;
-
-    border-radius:22px;
-
     backdrop-filter:blur(10px);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.14);
 
 }
 
@@ -968,20 +980,29 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     color:white;
 
-    font-size:52px;
+    font-size:44px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
 }
 
 .stat-box span{
 
-    color:white;
+    display:block;
 
-    opacity:.9;
+    font-weight:600;
+
+    margin-bottom:15px;
 
 }
 
+.stat-box small{
+
+    color:#dbeafe;
+
+    font-size:14px;
+
+}
 
 
 /* ==========================================
