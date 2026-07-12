@@ -1015,71 +1015,65 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 }
 
-.trend-grid{
+.empty-state{
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.trend-card{
+    margin-top:60px;
 
     background:white;
 
-    border-radius:22px;
+    border:2px dashed #cbd5e1;
 
-    padding:35px;
+    border-radius:28px;
 
-    border:1px solid #e2e8f0;
+    padding:80px 50px;
 
-    transition:.3s;
-
-}
-
-.trend-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.08);
+    text-align:center;
 
 }
 
-.trend-card h3{
+.empty-icon{
 
-    margin:18px 0 12px;
+    width:90px;
 
-}
+    height:90px;
 
-.risk{
+    margin:auto;
 
-    display:inline-block;
+    margin-bottom:25px;
 
-    padding:8px 18px;
+    display:flex;
 
-    border-radius:30px;
+    justify-content:center;
 
-    font-size:13px;
+    align-items:center;
 
-    font-weight:700;
+    background:#eff6ff;
 
-}
+    border-radius:50%;
 
-.high{
-
-    background:#fee2e2;
-
-    color:#dc2626;
+    font-size:40px;
 
 }
 
-.medium{
+.empty-state h3{
 
-    background:#fef3c7;
+    font-size:32px;
 
-    color:#d97706;
+    margin-bottom:18px;
+
+}
+
+.empty-state p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
 
 }
 
