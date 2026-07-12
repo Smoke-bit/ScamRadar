@@ -1,0 +1,228 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f8fafc;
+
+    color:#0f172a;
+
+    line-height:1.6;
+}
+
+
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root{
+
+    --primary:#2563eb;
+
+    --primary-dark:#1d4ed8;
+
+    --secondary:#64748b;
+
+    --background:#f8fafc;
+
+    --white:#ffffff;
+
+    --border:#e2e8f0;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+    --success:#22c55e;
+
+}
+
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* ===========================
+   IMAGES
+=========================== */
+
+img{
+
+    max-width:100%;
+
+}
+
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.primary-btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+}
+
+.primary-btn:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+
+.secondary-btn{
+
+    background:white;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+    padding:15px 30px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+}
+
+.secondary-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    padding:90px 0;
+
+}
+
+
+/* ===========================
+   TITLES
+=========================== */
+
+h1{
+
+    font-size:60px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+}
+
+h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    color:var(--secondary);
+
+}
+
+
+/* ===========================
+   CARDS
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
