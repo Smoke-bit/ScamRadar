@@ -488,29 +488,41 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     box-shadow:0 18px 45px rgba(0,0,0,.08);
 
+    animation: float 5s ease-in-out infinite;
+
 }
 
 .leaderboard-card{
 
     top:0;
 
-    left:0;
+    left:-20px;
 
+    z-index:30;
+
+    animation-delay:0s;
 }
 
 .activity-card{
 
-    top:110px;
+    top:80px;
 
-    right:0;
+    right:-30px;
+
+    z-index:30;
+
+    animation-delay:1.5s;
 
 }
-
 .status-card{
 
-    bottom:0;
+    bottom:-10px;
 
-    left:20px;
+    left:0;
+
+    z-index:30;
+
+    animation-delay:3s;
 
 }
 
@@ -519,6 +531,8 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
     font-size:18px;
 
     margin-bottom:15px;
+
+    
 
 }
 
