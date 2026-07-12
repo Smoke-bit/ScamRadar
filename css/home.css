@@ -468,49 +468,79 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 }
 
-.floating-card{
+.hero-side-card{
 
     position:absolute;
 
-    background:white;
+    width:240px;
 
-    padding:18px;
+    background:white;
 
     border-radius:18px;
 
-    width:220px;
-
-    box-shadow:0 25px 45px rgba(0,0,0,.08);
+    padding:20px;
 
     border:1px solid #e2e8f0;
 
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
     animation:float 5s ease-in-out infinite;
+
+    z-index:10;
 
 }
 
-.top-card{
+.leaderboard-card{
 
     top:20px;
 
-    left:-20px;
+    left:-30px;
 
 }
 
-.right-card{
+.activity-card{
 
     right:-40px;
 
-    top:170px;
+    top:180px;
 
 }
 
-.bottom-card{
+.status-card{
 
-    left:10px;
+    left:20px;
 
-    bottom:10px;
+    bottom:20px;
 
 }
+
+.hero-side-card h4{
+
+    margin-bottom:15px;
+
+    color:#0f172a;
+
+    font-size:17px;
+
+}
+
+.hero-side-card p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+.hero-side-card strong{
+
+    color:#2563eb;
+
+}
+
+
+
+
 
 .floating-card h4{
 

@@ -1,137 +1,89 @@
-import{
+// =====================================
+// Temporary Community Data
+// =====================================
 
-getCommunityStats,
+const reports=[];
 
-getTopThreat
+const members=0;
+
+const verified=0;
+
+// =====================================
+
+const leaderboard=document.getElementById("leaderboard-content");
+
+const activity=document.getElementById("activity-content");
+
+const status=document.getElementById("status-content");
+
+// =====================================
+
+if(reports.length===0){
+
+leaderboard.innerHTML=`
+
+<p>
+
+No trending threats yet.
+
+</p>
+
+<p>
+
+<strong>Be the first to report one.</strong>
+
+</p>
+
+`;
 
 }
 
-from "./database.js";
+else{
 
-async function loadHero(){
+leaderboard.innerHTML=`
 
-    const container=document.getElementById("heroCards");
+<p>
 
-    const stats=await getCommunityStats();
+🥇 ${reports[0].name}
 
-    const threat=await getTopThreat();
+</p>
 
-    if(threat===null){
+<p>
 
-        container.innerHTML=`
+${reports[0].count} Reports
 
-        <div class="floating-card top-card">
+</p>
 
-            <h4>Platform Ready</h4>
-
-            <p>
-
-            Waiting for the first community report.
-
-            </p>
-
-        </div>
-
-        <div class="floating-card right-card">
-
-            <h4>Community</h4>
-
-            <p>
-
-            ${stats.totalReports} Reports
-
-            </p>
-
-            <p>
-
-            ${stats.totalMembers} Members
-
-            </p>
-
-        </div>
-
-        <div class="floating-card bottom-card">
-
-            <h4>Top Threat</h4>
-
-            <p>
-
-            No reports yet.
-
-            </p>
-
-        </div>
-
-        `;
-
-        return;
-
-    }
-
-    container.innerHTML=`
-
-    <div class="floating-card top-card">
-
-        <span class="high-risk">
-
-        MOST REPORTED
-
-        </span>
-
-        <h4>
-
-        ${threat.name}
-
-        </h4>
-
-        <p>
-
-        ${threat.reports} Reports
-
-        </p>
-
-    </div>
-
-    <div class="floating-card right-card">
-
-        <h4>
-
-        Community
-
-        </h4>
-
-        <p>
-
-        ${stats.totalReports} Reports
-
-        </p>
-
-        <p>
-
-        ${stats.totalMembers} Members
-
-        </p>
-
-    </div>
-
-    <div class="floating-card bottom-card">
-
-        <h4>
-
-        ScamRadar
-
-        </h4>
-
-        <p>
-
-        Live Community Data
-
-        </p>
-
-    </div>
-
-    `;
+`;
 
 }
 
-loadHero();
+// =====================================
+
+activity.innerHTML=`
+
+<p><strong>${reports.length}</strong> Reports</p>
+
+<p><strong>${members}</strong> Members</p>
+
+<p><strong>${verified}</strong> Verified Websites</p>
+
+`;
+
+// =====================================
+
+status.innerHTML=`
+
+<p>
+
+Platform ready.
+
+</p>
+
+<p>
+
+Waiting for the first community submission.
+
+</p>
+
+`;
