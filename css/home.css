@@ -1136,62 +1136,34 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 
 /* ==========================================
-            CTA
+                CTA BUTTONS
 ========================================== */
 
-.cta{
+.cta-buttons{
 
-    padding:120px 0;
+    display:flex;
 
-}
+    justify-content:center;
 
-.cta-box{
+    gap:20px;
 
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    margin-top:35px;
 
-    border-radius:28px;
-
-    padding:70px;
-
-    text-align:center;
-
-    color:white;
+    flex-wrap:wrap;
 
 }
 
-.cta-box h2{
-
-    color:white;
-
-    font-size:48px;
-
-    margin-bottom:20px;
-
-}
-
-.cta-box p{
-
-    color:white;
-
-    opacity:.9;
-
-    margin-bottom:35px;
-
-    font-size:18px;
-
-}
-
-.primary-btn{
+.secondary-btn{
 
     display:inline-block;
-
-    background:white;
-
-    color:#2563eb;
 
     padding:18px 34px;
 
     border-radius:14px;
+
+    border:2px solid white;
+
+    color:white;
 
     font-weight:700;
 
@@ -1199,9 +1171,11 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 }
 
-.primary-btn:hover{
+.secondary-btn:hover{
 
-    transform:translateY(-5px);
+    background:white;
+
+    color:#2563eb;
 
 }
 
