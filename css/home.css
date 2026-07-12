@@ -936,7 +936,19 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     background:linear-gradient(135deg,#2563eb,#1d4ed8);
 
+    padding:100px 0;
+
+}
+
+.stats .section-title h2{
+
     color:white;
+
+}
+
+.stats .section-title p{
+
+    color:#dbeafe;
 
 }
 
@@ -946,7 +958,7 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:28px;
+    gap:30px;
 
     margin-top:60px;
 
@@ -954,15 +966,17 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 .stat-box{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.10);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
-    border-radius:24px;
+    border-radius:22px;
 
     padding:35px;
 
     text-align:center;
+
+    border:1px solid rgba(255,255,255,.15);
 
     transition:.35s;
 
@@ -972,7 +986,7 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     transform:translateY(-8px);
 
-    background:rgba(255,255,255,.14);
+    background:rgba(255,255,255,.16);
 
 }
 
@@ -980,7 +994,7 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     color:white;
 
-    font-size:44px;
+    font-size:48px;
 
     margin-bottom:12px;
 
@@ -990,9 +1004,13 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     display:block;
 
+    color:white;
+
+    font-size:18px;
+
     font-weight:600;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 
 }
 
@@ -1003,7 +1021,6 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
     font-size:14px;
 
 }
-
 
 /* ==========================================
             TRENDING
@@ -1161,9 +1178,11 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
     border-radius:14px;
 
-    border:2px solid white;
+    border:2px solid #2563eb;
 
-    color:white;
+    background:white;
+
+    color:#2563eb;
 
     font-weight:700;
 
@@ -1173,9 +1192,13 @@ box-shadow:0 30px 80px rgba(37,99,235,.15);
 
 .secondary-btn:hover{
 
-    background:white;
+    background:#2563eb;
 
-    color:#2563eb;
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
 
 }
 
