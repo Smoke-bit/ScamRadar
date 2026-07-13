@@ -34,20 +34,12 @@ async function verify() {
 
         console.log(data);
 
-        // Update searched entity
         const entity = document.getElementById("entityName");
         const badge = document.getElementById("riskBadge");
         const status = document.getElementById("verificationStatus");
 
-        console.log(entity);
-        console.log(badge);
-        console.log(status);
+        entity.textContent = data.searched;
 
-        // Elements
-        const badge = document.getElementById("riskBadge");
-        const status = document.getElementById("verificationStatus");
-
-        // Website verification
         if (data.type === "website") {
 
             if (data.reachable) {
@@ -68,10 +60,7 @@ async function verify() {
 
             }
 
-        }
-
-        // Other types
-        else {
+        } else {
 
             badge.textContent = data.type.toUpperCase();
             badge.className = "risk-badge neutral";
@@ -81,9 +70,7 @@ async function verify() {
 
         }
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         console.error(err);
         alert("Unable to connect to backend.");
