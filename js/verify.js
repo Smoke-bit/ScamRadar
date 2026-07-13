@@ -35,7 +35,13 @@ async function verify() {
         console.log(data);
 
         // Update searched entity
-        document.getElementById("entityName").textContent = data.searched;
+        const entity = document.getElementById("entityName");
+        const badge = document.getElementById("riskBadge");
+        const status = document.getElementById("verificationStatus");
+
+        console.log(entity);
+        console.log(badge);
+        console.log(status);
 
         // Elements
         const badge = document.getElementById("riskBadge");
