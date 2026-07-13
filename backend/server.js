@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import verifyRoutes from "./routes/verify.js";
 
 dotenv.config();
+console.log("VT KEY:", process.env.VIRUSTOTAL_API_KEY);
 
 const app = express();
 

@@ -1,3 +1,4 @@
+import { checkVirusTotal } from "../services/virusTotalService.js"; 
 import {
     detectInputType,
     verifyWebsite
@@ -11,9 +12,15 @@ export async function verifyEntity(req, res) {
 
     let result = {};
 
-    if (type === "website") {
-        result = await verifyWebsite(input);
-    }
+    if(type==="website"){
+
+    result = await verifyWebsite(input);
+
+    const vt = await checkVirusTotal(input);
+
+    result.virusTotal = vt;
+
+}
 
     res.json({
 
