@@ -457,3 +457,280 @@
     color:#334155;
 
 }
+
+.risk-circle.safe{
+
+    border-color:#22c55e;
+    color:#22c55e;
+
+}
+
+.risk-circle.warning{
+
+    border-color:#f59e0b;
+    color:#f59e0b;
+
+}
+
+.risk-circle.danger{
+
+    border-color:#ef4444;
+    color:#ef4444;
+
+}
+
+#recommendation{
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    font-size:15px;
+
+    color:#475569;
+
+    line-height:1.6;
+
+}
+
+#vtStats{
+
+    line-height:2;
+
+    font-weight:600;
+
+}
+.risk-badge.danger{
+
+    background:#fee2e2;
+    color:#991b1b;
+
+}
+#scanProgress{
+
+    margin-top:18px;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    min-height:22px;
+
+    transition:.3s;
+
+}
+/* ================= BUTTON STATES ================= */
+
+.verify-loading{
+
+    background:#1d4ed8 !important;
+
+    cursor:not-allowed;
+
+    opacity:.85;
+
+}
+
+.verify-success{
+
+    background:#16a34a !important;
+
+}
+/* ================= SCAN TIMELINE ================= */
+
+#scanTimeline{
+
+    margin-top:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+#scanTimeline div{
+
+    padding:10px 15px;
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    color:#475569;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.scan-done{
+
+    background:#dcfce7 !important;
+
+    color:#166534 !important;
+
+}
+
+.scan-current{
+
+    background:#dbeafe !important;
+
+    color:#2563eb !important;
+
+}
+
+/* ================= VIRUSTOTAL ================= */
+
+.vt-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:15px;
+
+}
+
+.vt-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.vt-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.vt-card span{
+
+    font-size:28px;
+
+}
+
+.vt-card h2{
+
+    margin:10px 0;
+
+    color:#0f172a;
+
+    font-size:34px;
+
+}
+
+.vt-card p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+/* ================= RECENT SEARCHES ================= */
+
+.recent-section{
+
+    padding:60px 0;
+
+}
+
+#recentSearches{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.search-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.search-item:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.search-url{
+
+    font-weight:600;
+
+    color:#0f172a;
+
+}
+
+.search-risk{
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+.search-safe{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+.search-warning{
+
+    background:#fef3c7;
+
+    color:#92400e;
+
+}
+
+.search-danger{
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+}

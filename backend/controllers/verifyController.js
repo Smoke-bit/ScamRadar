@@ -35,7 +35,7 @@ export async function verifyEntity(req, res) {
         result.risk = risk;
 
         // Save Scan
-        saveScan({
+        /*saveScan({
             url: input,
             risk,
             reachable: result.reachable,
@@ -45,7 +45,7 @@ export async function verifyEntity(req, res) {
             suspicious,
             harmless,
             scanDate: new Date().toISOString()
-        });
+        });*/
 
     }
 

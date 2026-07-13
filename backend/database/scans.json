@@ -20,5 +20,181 @@
     "suspicious": 0,
     "harmless": 63,
     "scanDate": "2026-07-13T07:25:20.884Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:09:29.552Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:09:34.669Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:10:04.470Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:11:32.630Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:11:41.750Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:16:21.309Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:17:35.128Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:18:20.292Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:22:25.737Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:23:24.367Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:23:29.638Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:24:28.412Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:35:54.915Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 62,
+    "scanDate": "2026-07-13T08:40:04.962Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 63,
+    "scanDate": "2026-07-13T08:40:33.729Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 63,
+    "scanDate": "2026-07-13T08:42:12.622Z"
   }
 ]

@@ -59,7 +59,7 @@
                 placeholder="Search website, phone number, email or UPI..."
             >
 
-            <button id="verifyBtn">
+            <button id="verifyBtn" type="button">
 
                 Verify
 
@@ -112,12 +112,51 @@
     </div>
 
     <div class="result-grid">
+        <div class="result-box">
+
+            <h3>VirusTotal Intelligence</h3>
+
+            <div class="vt-grid">
+
+                <div class="vt-card">
+
+                    <span>🟥</span>
+
+                    <h2 id="maliciousCount">0</h2>
+
+                    <p>Malicious</p>
+
+                </div>
+
+                <div class="vt-card">
+
+                    <span>🟨</span>
+
+                    <h2 id="suspiciousCount">0</h2>
+
+                    <p>Suspicious</p>
+
+                </div>
+
+                <div class="vt-card">
+
+                    <span>🟩</span>
+
+                    <h2 id="harmlessCount">0</h2>
+
+                    <p>Harmless</p>
+
+                </div>
+
+            </div>
+
+        </div>
 
         <div class="result-box">
 
             <h3>Risk Score</h3>
 
-            <div class="risk-circle">
+            <div class="risk-circle" id="riskCircle">
 
                 --
 
@@ -142,12 +181,54 @@
             <p id="verificationStatus">
                 Waiting for search...
             </p>
+            <div id="scanTimeline">
+
+                <div id="step1">⏳ Starting Scan...</div>
+
+                <div id="step2"></div>
+
+                <div id="step3"></div>
+
+                <div id="step4"></div>
+
+                <div id="step5"></div>
+
+            </div>
+
+            <br>
+
+            <div id="recommendation">
+                Verify a website to receive recommendations.
+            </div>
 
         </div>
 
     </div>
 
 </div>
+
+</section>
+<section class="recent-section">
+
+    <div class="container">
+
+        <div class="info-card">
+
+            <div class="section-header">
+
+                <h2>🕒 Recent Searches</h2>
+
+            </div>
+
+            <div id="recentSearches">
+
+                <p>No recent searches.</p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -167,13 +248,13 @@
 
             </div>
 
-            <div class="analysis-grid">
+           <div class="analysis-grid">
 
                 <div class="analysis-box">
 
-                    <h4>Threat Type</h4>
+                 <h4>Threat Type</h4>
 
-                    <p>—</p>
+                    <p id="threatType">Waiting...</p>
 
                 </div>
 
@@ -181,7 +262,7 @@
 
                     <h4>Confidence</h4>
 
-                    <p>—</p>
+                    <p id="confidence">--%</p>
 
                 </div>
 
@@ -189,7 +270,11 @@
 
                     <h4>Recommendation</h4>
 
-                    <p>Run a verification to receive AI guidance.</p>
+                    <p id="aiRecommendation">
+
+                        Run a verification to receive AI guidance.
+
+                    </p>
 
                 </div>
 
