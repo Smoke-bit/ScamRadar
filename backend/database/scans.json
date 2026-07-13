@@ -1,0 +1,24 @@
+[
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 63,
+    "scanDate": "2026-07-13T07:25:13.494Z"
+  },
+  {
+    "url": "google.com",
+    "risk": "SAFE",
+    "reachable": true,
+    "https": true,
+    "status": 200,
+    "malicious": 0,
+    "suspicious": 0,
+    "harmless": 63,
+    "scanDate": "2026-07-13T07:25:20.884Z"
+  }
+]
