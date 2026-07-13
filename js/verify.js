@@ -1,60 +1,86 @@
 console.log("verify.js loaded");
-const verifyBtn = document.getElementById("verifyBtn");
 
+const verifyBtn = document.getElementById("verifyBtn");
 const verifyInput = document.getElementById("verifyInput");
 
 verifyBtn.addEventListener("click", verify);
 
-async function verify(){
+async function verify() {
 
     const input = verifyInput.value.trim();
 
-    if(input===""){
-
+    if (input === "") {
         alert("Enter something to verify.");
-
         return;
-
     }
 
-    try{
+    try {
 
-        const response = await fetch("http://localhost:5000/api/verify",{
+        const response = await fetch("http://localhost:5000/api/verify", {
 
-            method:"POST",
+            method: "POST",
 
-            headers:{
-
-                "Content-Type":"application/json"
-
+            headers: {
+                "Content-Type": "application/json"
             },
 
-            body:JSON.stringify({
-
+            body: JSON.stringify({
                 input
-
             })
 
         });
 
         const data = await response.json();
 
-        document.getElementById("entityName").textContent =
-        data.searched;
-
-        document.getElementById("verificationStatus").textContent =
-        "Detected as: " + data.type;
-
-        document.getElementById("riskBadge").textContent =
-        data.type.toUpperCase();
-
         console.log(data);
+
+        // Update searched entity
+        document.getElementById("entityName").textContent = data.searched;
+
+        // Elements
+        const badge = document.getElementById("riskBadge");
+        const status = document.getElementById("verificationStatus");
+
+        // Website verification
+        if (data.type === "website") {
+
+            if (data.reachable) {
+
+                badge.textContent = "SAFE";
+                badge.className = "risk-badge safe";
+
+                status.textContent =
+                    `Website is reachable • HTTP ${data.status}`;
+
+            } else {
+
+                badge.textContent = "WARNING";
+                badge.className = "risk-badge warning";
+
+                status.textContent =
+                    "Website could not be reached.";
+
+            }
+
+        }
+
+        // Other types
+        else {
+
+            badge.textContent = data.type.toUpperCase();
+            badge.className = "risk-badge neutral";
+
+            status.textContent =
+                `Detected as ${data.type}`;
+
+        }
 
     }
 
-    catch(err){
+    catch (err) {
 
         console.error(err);
+        alert("Unable to connect to backend.");
 
     }
 

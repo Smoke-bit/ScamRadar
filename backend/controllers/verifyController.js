@@ -1,6 +1,19 @@
-export async function verifyEntity(req, res){
+import {
+    detectInputType,
+    verifyWebsite
+} from "../services/verifierService.js";
+
+export async function verifyEntity(req, res) {
 
     const { input } = req.body;
+
+    const type = detectInputType(input);
+
+    let result = {};
+
+    if (type === "website") {
+        result = await verifyWebsite(input);
+    }
 
     res.json({
 
@@ -8,13 +21,9 @@ export async function verifyEntity(req, res){
 
         searched: input,
 
-        type: "unknown",
+        type,
 
-        risk: "Unknown",
-
-        score: 0,
-
-        reports: 0
+        ...result
 
     });
 
