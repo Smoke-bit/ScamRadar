@@ -1,7 +1,28 @@
 console.log("verify.js loaded");
 
+// ==========================================
+// DOM ELEMENTS
+// ==========================================
+
 const verifyBtn = document.getElementById("verifyBtn");
 const verifyInput = document.getElementById("verifyInput");
+
+const entity = document.getElementById("entityName");
+const badge = document.getElementById("riskBadge");
+const status = document.getElementById("verificationStatus");
+const riskCircle = document.getElementById("riskCircle");
+
+const recommendation = document.getElementById("recommendation");
+
+const threatType = document.getElementById("threatType");
+const confidence = document.getElementById("confidence");
+const aiRecommendation = document.getElementById("aiRecommendation");
+
+const maliciousCount = document.getElementById("maliciousCount");
+const suspiciousCount = document.getElementById("suspiciousCount");
+const harmlessCount = document.getElementById("harmlessCount");
+
+const riskFactors = document.getElementById("riskFactors");
 
 const step1 = document.getElementById("step1");
 const step2 = document.getElementById("step2");
@@ -9,217 +30,406 @@ const step3 = document.getElementById("step3");
 const step4 = document.getElementById("step4");
 const step5 = document.getElementById("step5");
 
-console.log({
-    step1,
-    step2,
-    step3,
-    step4,
-    step5
-});
+// ==========================================
+// EVENT LISTENERS
+// ==========================================
 
 verifyBtn.addEventListener("click", verify);
 
-async function verify() {
+// ==========================================
+// HELPERS
+// ==========================================
+
+function sleep(ms){
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+
+}
+
+function resetTimeline(){
+
+    [step1,step2,step3,step4,step5].forEach(step=>{
+
+        step.className="";
+
+        step.textContent="";
+
+    });
+
+}
+
+function setButtonLoading(){
+
+    verifyBtn.disabled=true;
+
+    verifyBtn.classList.add("verify-loading");
+
+    verifyBtn.textContent="⏳ Verifying...";
+
+}
+
+function resetButton(){
+
+    verifyBtn.disabled=false;
+
+    verifyBtn.classList.remove("verify-loading");
+
+    verifyBtn.classList.remove("verify-success");
+
+    verifyBtn.textContent="Verify Again";
+
+}
+
+function successButton(){
+
+    verifyBtn.classList.remove("verify-loading");
+
+    verifyBtn.classList.add("verify-success");
+
+    verifyBtn.textContent="✔ Verified";
+
+    setTimeout(resetButton,2000);
+
+}
+// ==========================================
+// MAIN VERIFY FUNCTION
+// ==========================================
+
+async function verify(){
 
     const input = verifyInput.value.trim();
 
-    if (!input) {
+    if(!input){
+
         alert("Enter something to verify.");
+
         return;
+
     }
 
-    const entity = document.getElementById("entityName");
-    const badge = document.getElementById("riskBadge");
-    const status = document.getElementById("verificationStatus");
-    const riskCircle = document.getElementById("riskCircle");
-    const threatType = document.getElementById("threatType");
-    const confidence = document.getElementById("confidence");
-    const aiRecommendation = document.getElementById("aiRecommendation");
-    const maliciousCount = document.getElementById("maliciousCount");
-    const suspiciousCount = document.getElementById("suspiciousCount");
-    const harmlessCount = document.getElementById("harmlessCount");
-    const vtStats = document.getElementById("vtStats");
+    try{
 
-    try {
+        resetTimeline();
 
-        // ---------------- Reset Timeline ----------------
+        setButtonLoading();
 
-        [step1, step2, step3, step4, step5].forEach(step => {
-            step.className = "";
-            step.textContent = "";
-        });
+        // ---------- STEP 1 ----------
 
-        step1.textContent = "⏳ Starting Scan...";
+        step1.className="scan-current";
 
-        // ---------------- Button ----------------
+        step1.textContent="⏳ Starting Scan...";
 
-        verifyBtn.disabled = true;
-        verifyBtn.classList.add("verify-loading");
-        verifyBtn.textContent = "⏳ Verifying...";
+        await sleep(300);
 
-        // ---------------- Step 1 ----------------
+        step1.className="scan-done";
 
-        step1.className = "scan-current";
+        step1.textContent="✔ Scan Started";
 
-        await new Promise(r => setTimeout(r, 350));
+        // ---------- STEP 2 ----------
 
-        step1.className = "scan-done";
-        step1.textContent = "✔ Scan Started";
+        step2.className="scan-current";
 
-        // ---------------- Step 2 ----------------
+        step2.textContent="🌐 Checking Website...";
 
-        step2.className = "scan-current";
-        step2.textContent = "🌐 Checking Website...";
+        const response = await fetch("http://localhost:5000/api/verify",{
 
-        const response = await fetch("http://localhost:5000/api/verify", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
             },
-            body: JSON.stringify({ input })
+
+            body:JSON.stringify({
+                input
+            })
+
         });
+
+        if(!response.ok){
+
+            throw new Error("Backend Error");
+
+        }
 
         const data = await response.json();
 
-        if (data.reachable) {
-            step2.className = "scan-done";
-            step2.textContent = "✔ Website Reachable";
-        } else {
-            step2.className = "scan-done";
-            step2.textContent = "❌ Website Unreachable";
+        await sleep(250);
+
+        step2.className="scan-done";
+
+        step2.textContent=data.reachable
+        ? "✔ Website Reachable"
+        : "❌ Website Unreachable";
+
+        // ---------- STEP 3 ----------
+
+        step3.className="scan-current";
+
+        step3.textContent="🛡 VirusTotal Analysis...";
+
+        await sleep(250);
+
+        step3.className="scan-done";
+
+        step3.textContent="✔ VirusTotal Complete";
+
+        // ---------- STEP 4 ----------
+
+        step4.className="scan-current";
+
+        step4.textContent="📊 Calculating Risk...";
+
+        await sleep(300);
+
+        // Update all UI
+
+        updateRiskUI(data);
+
+        updateAIAnalysis(data);
+
+        updateVirusTotal(data);
+
+        updateRiskFactors(data);
+
+        // ---------- STEP 5 ----------
+
+        step4.className="scan-done";
+
+        step4.textContent="✔ Risk Calculated";
+
+        step5.className="scan-done";
+
+        step5.textContent="✅ Verification Complete";
+
+        successButton();
+
+        loadRecentSearches();
+
+    }
+
+    catch(err){
+
+        showError(err);
+
+    }
+
+}
+// ==========================================
+// UPDATE RISK UI
+// ==========================================
+
+function updateRiskUI(data){
+
+    // Website Name
+    entity.textContent = data.searched;
+
+    // Risk Circle
+    riskCircle.innerHTML = `
+        <div class="risk-score">${data.riskScore}</div>
+        <div class="risk-outof">/100</div>
+    `;
+
+    const score = Number(data.riskScore ?? 0);
+
+    console.log("riskScore =", data.riskScore);
+    console.log("score =", score);
+    // Reset Classes
+    badge.className = "risk-badge";
+    riskCircle.className = "risk-circle";
+
+    // SAFE
+    if(score < 20){
+
+        badge.textContent = "SAFE";
+
+        badge.classList.add("safe");
+
+        riskCircle.classList.add("safe");
+
+        recommendation.textContent =
+            "✅ No major threats detected. Continue with normal caution.";
+
+    }
+
+    // SUSPICIOUS
+    else if(score < 50){
+
+        badge.textContent = "SUSPICIOUS";
+
+        badge.classList.add("warning");
+
+        riskCircle.classList.add("warning");
+
+        recommendation.textContent =
+            "⚠ Some warning signs were detected. Verify the website before entering passwords or payment information.";
+
+    }
+
+    // DANGEROUS
+    else{
+
+        badge.textContent = "DANGEROUS";
+
+        badge.classList.add("danger");
+
+        riskCircle.classList.add("danger");
+
+        recommendation.textContent =
+            "🚨 High Risk. Avoid interacting with this website.";
+
+    }
+
+    // Status Line
+
+    status.textContent = `
+Reachable • HTTPS ${data.https ? "Enabled" : "Disabled"} • HTTP ${data.status ?? "--"}
+`;
+
+}
+// ==========================================
+// UPDATE AI ANALYSIS
+// ==========================================
+
+function updateAIAnalysis(data){
+
+    const score = data.riskScore;
+
+    if(score < 20){
+
+        threatType.textContent = "Safe Website";
+        confidence.textContent = "98%";
+
+        aiRecommendation.textContent =
+            "No significant threats were detected. Continue using normal online safety practices.";
+
+    }
+
+    else if(score < 50){
+
+        threatType.textContent = "Suspicious Website";
+        confidence.textContent = "76%";
+
+        aiRecommendation.textContent =
+            "Some warning signs were detected. Verify ownership before logging in or making payments.";
+
+    }
+
+    else{
+
+        threatType.textContent = "Potentially Malicious";
+        confidence.textContent = "95%";
+
+        aiRecommendation.textContent =
+            "Multiple threat indicators were detected. Avoid entering passwords or sensitive information.";
+
+    }
+
+}
+
+// ==========================================
+// UPDATE VIRUSTOTAL
+// ==========================================
+
+function updateVirusTotal(data){
+
+    if(!data.virusTotal){
+
+        maliciousCount.textContent = "--";
+        suspiciousCount.textContent = "--";
+        harmlessCount.textContent = "--";
+
+        return;
+
+    }
+
+    maliciousCount.textContent =
+        data.virusTotal.stats.malicious;
+
+    suspiciousCount.textContent =
+        data.virusTotal.stats.suspicious;
+
+    harmlessCount.textContent =
+        data.virusTotal.stats.harmless;
+
+}
+// ==========================================
+// UPDATE RISK FACTORS
+// ==========================================
+
+function updateRiskFactors(data){
+
+    let html = "";
+
+    // HTTPS
+
+    html += data.https
+        ? "<li>✅ HTTPS connection detected.</li>"
+        : "<li>⚠ Website is not using HTTPS.</li>";
+
+    // Reachability
+
+    html += data.reachable
+        ? "<li>✅ Website is reachable.</li>"
+        : "<li>❌ Website could not be reached.</li>";
+
+    // VirusTotal
+
+    if(data.virusTotal){
+
+        if(data.virusTotal.stats.malicious > 0){
+
+            html += `
+            <li>
+                🚨 ${data.virusTotal.stats.malicious}
+                security vendors flagged this website as malicious.
+            </li>
+            `;
+
         }
 
-        // ---------------- Step 3 ----------------
+        if(data.virusTotal.stats.suspicious > 0){
 
-        step3.className = "scan-current";
-        step3.textContent = "🛡 VirusTotal Analysis...";
-
-        await new Promise(r => setTimeout(r, 250));
-
-        step3.className = "scan-done";
-        step3.textContent = "✔ VirusTotal Complete";
-
-        // ---------------- Step 4 ----------------
-
-        step4.className = "scan-current";
-        step4.textContent = "📊 Calculating Risk...";
-
-        await new Promise(r => setTimeout(r, 250));
-
-        // ---------------- Update UI ----------------
-
-        entity.textContent = data.searched;
-
-        badge.textContent = data.risk;
-        riskCircle.textContent = data.risk;
-
-        switch (data.risk) {
-
-            case "SAFE":
-
-                badge.className = "risk-badge safe";
-                riskCircle.className = "risk-circle safe";
-
-                recommendation.textContent =
-                    "✅ This website appears safe. Always verify URLs before entering sensitive information.";
-
-                break;
-
-            case "SUSPICIOUS":
-
-                badge.className = "risk-badge warning";
-                riskCircle.className = "risk-circle warning";
-
-                recommendation.textContent =
-                    "⚠ Proceed carefully. Verify the website before entering credentials.";
-
-                break;
-
-            default:
-
-                badge.className = "risk-badge danger";
-                riskCircle.className = "risk-circle danger";
-
-                recommendation.textContent =
-                    "🚨 High Risk. Avoid using this website.";
+            html += `
+            <li>
+                ⚠ ${data.virusTotal.stats.suspicious}
+                security vendors flagged this website as suspicious.
+            </li>
+            `;
 
         }
 
-        status.textContent =
-            `Reachable • HTTPS ${data.https ? "Enabled" : "Disabled"} • HTTP ${data.status}`;
+        if(
+            data.virusTotal.stats.malicious===0 &&
+            data.virusTotal.stats.suspicious===0
+        ){
 
-        // ================= AI ANALYSIS =================
-
-        if (data.risk === "SAFE") {
-
-            threatType.textContent = "Safe Website";
-            confidence.textContent = "98%";
-
-            aiRecommendation.textContent =
-            "No known threats detected. Continue to verify URLs before entering passwords or payment details.";
+            html += `
+            <li>
+                ✅ No security vendors reported threats.
+            </li>
+            `;
 
         }
 
-        else if (data.risk === "SUSPICIOUS") {
+    }
 
-            threatType.textContent = "Suspicious Website";
-            confidence.textContent = "74%";
+    html += `
+        <li>
+            📊 Overall Risk Score:
+            <strong>${data.riskScore}/100</strong>
+        </li>
+    `;
 
-            aiRecommendation.textContent =
-            "Some risk indicators were detected. Verify the website before logging in or making payments.";
+    riskFactors.innerHTML = html;
 
-        }
+}
+// ==========================================
+// LOAD RECENT SEARCHES
+// ==========================================
 
-        else {
+async function loadRecentSearches(){
 
-            threatType.textContent = "Potentially Malicious";
-            confidence.textContent = "95%";
-
-            aiRecommendation.textContent =
-            "Avoid visiting this website. Multiple threat indicators suggest it may be unsafe.";
-
-        }
-
-        // ---------------- VirusTotal ----------------
-
-        if (data.virusTotal) {
-
-            maliciousCount.textContent =
-            data.virusTotal.stats.malicious;
-
-            suspiciousCount.textContent =
-            data.virusTotal.stats.suspicious;
-
-            harmlessCount.textContent =
-            data.virusTotal.stats.harmless;
-        } else {
-
-            vtStats.textContent = "VirusTotal data unavailable.";
-
-        }
-
-        // ---------------- Finish ----------------
-
-        step4.className = "scan-done";
-        step4.textContent = "✔ Risk Calculated";
-
-        step5.className = "scan-done";
-        step5.textContent = "✅ Verification Complete";
-
-        verifyBtn.classList.remove("verify-loading");
-        verifyBtn.classList.add("verify-success");
-        verifyBtn.textContent = "✔ Verified";
-
-        setTimeout(() => {
-
-            verifyBtn.classList.remove("verify-success");
-            verifyBtn.disabled = false;
-            verifyBtn.textContent = "Verify Again";
-
-        }, 2000);
-        async function loadRecentSearches() {
-
-    try {
+    try{
 
         const response = await fetch("http://localhost:5000/api/history");
 
@@ -227,36 +437,42 @@ async function verify() {
 
         const container = document.getElementById("recentSearches");
 
-        if (scans.length === 0) {
+        if(!container) return;
 
-            container.innerHTML = "<p>No recent searches.</p>";
+        if(scans.length===0){
+
+            container.innerHTML="<p>No recent searches.</p>";
 
             return;
 
         }
 
-        container.innerHTML = "";
+        container.innerHTML="";
 
-        scans.forEach(scan => {
+        scans.forEach(scan=>{
 
-            let riskClass = "search-safe";
+            let riskClass="search-safe";
 
-            if (scan.risk === "SUSPICIOUS")
-                riskClass = "search-warning";
+            if(scan.risk==="SUSPICIOUS")
+                riskClass="search-warning";
 
-            if (scan.risk === "DANGEROUS")
-                riskClass = "search-danger";
+            if(scan.risk==="DANGEROUS")
+                riskClass="search-danger";
 
-            container.innerHTML += `
+            container.innerHTML+=`
 
                 <div class="search-item">
 
                     <div class="search-url">
+
                         🌐 ${scan.url}
+
                     </div>
 
                     <div class="search-risk ${riskClass}">
+
                         ${scan.risk}
+
                     </div>
 
                 </div>
@@ -269,33 +485,40 @@ async function verify() {
 
     catch(err){
 
-        console.error(err);
+        console.error("History Error:",err);
 
     }
 
 }
 
-    }
+// ==========================================
+// ERROR HANDLING
+// ==========================================
 
-    catch (err) {
+function showError(err){
 
-        console.error(err);
+    console.error(err);
 
-        step1.className = "scan-done";
-        step1.textContent = "❌ Verification Failed";
+    step1.className="scan-done";
+    step1.textContent="❌ Verification Failed";
 
-        step2.textContent = "";
-        step3.textContent = "";
-        step4.textContent = "";
-        step5.textContent = "";
+    step2.textContent="";
+    step3.textContent="";
+    step4.textContent="";
+    step5.textContent="";
 
-        verifyBtn.disabled = false;
-        verifyBtn.classList.remove("verify-loading");
-        verifyBtn.classList.remove("verify-success");
-        verifyBtn.textContent = "Verify";
+    verifyBtn.disabled=false;
 
-        alert("Unable to connect to backend.");
+    verifyBtn.classList.remove("verify-loading");
+    verifyBtn.classList.remove("verify-success");
 
-    }
+    verifyBtn.textContent="Verify";
+
+    alert("Unable to connect to backend.");
 
 }
+// ==========================================
+// INITIAL LOAD
+// ==========================================
+
+loadRecentSearches();
