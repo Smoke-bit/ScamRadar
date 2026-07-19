@@ -1,153 +1,1200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Report Scam | ScamRadar</title>
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/report.css">
+
 </head>
+
 <body>
+
+<!-- ==========================================
+                NAVBAR
+========================================== -->
 
 <header>
 
-    <nav class="navbar">
+    <nav class="navbar container">
 
-        <div class="logo">
-            <a href="index.html">ScamRadar</a>
-        </div>
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">🛡</span>
+
+            <span class="logo-text">
+                ScamRadar
+            </span>
+
+        </a>
 
         <ul class="nav-links">
-            <li><a href="verify.html">Verify</a></li>
-            <li><a href="analyze.html">Analyze</a></li>
-            <li><a href="report.html">Report</a></li>
-            <li><a href="learn.html">Learn</a></li>
+
+            <li>
+                <a href="verify.html">
+                    Verify
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    Community
+                </a>
+            </li>
+
+            <li>
+                <a href="learn.html">
+                    Learn
+                </a>
+            </li>
+
+            <li>
+                <a href="report.html" class="active">
+                    Report
+                </a>
+            </li>
+
         </ul>
+
+        <div class="auth-buttons">
+
+            <a href="login.html"
+               class="login-btn">
+
+                Login
+
+            </a>
+
+            <a href="#report-form"
+               class="signup-btn">
+
+                Report Now
+
+            </a>
+
+        </div>
 
     </nav>
 
 </header>
 
-<section class="report-page">
+<!-- ==========================================
+                HERO
+========================================== -->
 
-    <h1>Report a Scam</h1>
+<section class="hero report-hero">
 
-    <p>
-        Help others stay safe by reporting suspicious activity.
-    </p>
+    <div class="container hero-container">
 
-    <form>
+        <!-- ================= LEFT ================= -->
 
-        <label>What are you reporting?</label>
+        <div class="hero-left">
 
-        <select>
+            <span class="hero-badge">
 
-            <option>Website</option>
+                🚨 Community Powered Protection
 
-            <option>Phone Number</option>
+            </span>
 
-            <option>UPI ID</option>
+            <h1>
 
-            <option>Email Address</option>
+                Report Scams.<br>
 
-            <option>WhatsApp Number</option>
+                <span>Protect Everyone.</span>
 
-            <option>Telegram Username</option>
+            </h1>
 
-            <option>Instagram Account</option>
+            <p>
 
-            <option>Other</option>
+                Every report helps identify fraudulent websites,
+                phone numbers, UPI IDs, email addresses and fake
+                social media accounts before they reach more victims.
+                Your contribution strengthens ScamRadar's growing
+                community threat database.
 
-        </select>
+            </p>
 
-        <label>Enter the Value</label>
+            <div class="hero-buttons">
 
-        <input
-            type="text"
-            placeholder="Example: +91xxxxxxxxxx"
-        >
+                <a href="#report-form"
+                   class="primary-btn">
 
-        <label>Scam Category</label>
+                    Submit Report →
 
-        <select>
+                </a>
 
-            <option>Phishing</option>
+                <a href="reports.html"
+                   class="secondary-btn">
 
-            <option>Fake Shopping</option>
+                    Community Reports
 
-            <option>Courier Scam</option>
+                </a>
 
-            <option>Investment Scam</option>
+            </div>
 
-            <option>Job Scam</option>
+        </div>
 
-            <option>Bank Scam</option>
+        <!-- ================= RIGHT ================= -->
 
-            <option>UPI Fraud</option>
+        <div class="hero-right">
 
-            <option>Other</option>
+            <div class="hero-glow"></div>
 
-        </select>
+            <div class="shield-box">
 
-        <label>Description</label>
+                🚨
 
-        <textarea
-            placeholder="Tell us what happened..."
-        ></textarea>
+            </div>
 
-        <label>Upload Evidence</label>
+            <!-- Card 1 -->
 
-        <input type="file">
+            <div class="floating-card leaderboard-card">
 
-        <label>Location (Optional)</label>
+                <h4>
 
-        <input
-            type="text"
-            placeholder="City or State"
-        >
+                    📝 Reports Today
 
-        <label>
+                </h4>
 
-            <input type="checkbox">
+                <div class="stat-line">
 
-            Submit anonymously
+                    <span>
 
-        </label>
+                        Submitted
 
-        <button type="submit">
+                    </span>
 
-            Submit Report
+                    <strong>
 
-        </button>
+                        0
 
-    </form>
+                    </strong>
+
+                </div>
+
+                <small>
+
+                    Be the first person to submit
+                    a verified scam report today.
+
+                </small>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="floating-card activity-card">
+
+                <h4>
+
+                    🌍 Community Impact
+
+                </h4>
+
+                <div class="stat-line">
+
+                    <span>
+
+                        Reports Reviewed
+
+                    </span>
+
+                    <strong>
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <div class="stat-line">
+
+                    <span>
+
+                        Users Protected
+
+                    </span>
+
+                    <strong>
+
+                        0
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="floating-card status-card">
+
+                <h4>
+
+                    🛡 Moderation Status
+
+                </h4>
+
+                <p>
+
+                    Every community report is reviewed
+                    before it becomes publicly visible.
+
+                </p>
+
+                <small>
+
+                    Quality over quantity.
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section class="notice">
+<!-- ==========================================
+            REPORT FORM
+========================================== -->
 
-    <h2>Before You Submit</h2>
+<section class="report-section"
+         id="report-form">
 
-    <ul>
+    <div class="container">
 
-        <li>Only submit genuine reports.</li>
+        <div class="section-title">
 
-        <li>Do not upload sensitive personal information.</li>
+            <h2>
 
-        <li>False reports may be removed.</li>
+                Submit A Scam Report
 
-    </ul>
+            </h2>
+
+            <p>
+
+                Help the community by sharing accurate
+                information about suspicious activity.
+
+            </p>
+
+        </div>
+
+        <div class="report-wrapper">
+
+            <form id="reportForm">
+
+                <!-- ================= FORM ROW 1 ================= -->
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="reportType">
+
+                            Reporting Type
+
+                        </label>
+
+                        <select id="reportType" name="reportType">
+
+                            <option value="">Select Reporting Type</option>
+
+                            <option>Website</option>
+
+                            <option>Phone Number</option>
+
+                            <option>UPI ID</option>
+
+                            <option>Email Address</option>
+
+                            <option>WhatsApp Number</option>
+
+                            <option>Telegram Username</option>
+
+                            <option>Instagram Account</option>
+
+                            <option>Facebook Profile</option>
+
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="category">
+
+                            Scam Category
+
+                        </label>
+
+                        <select id="category" name="category">
+
+                            <option value="">Select Category</option>
+
+                            <option>Phishing</option>
+
+                            <option>Fake Shopping</option>
+
+                            <option>Courier Scam</option>
+
+                            <option>Investment Scam</option>
+
+                            <option>Job Scam</option>
+
+                            <option>UPI Fraud</option>
+
+                            <option>Banking Scam</option>
+
+                            <option>Crypto Scam</option>
+
+                            <option>Identity Theft</option>
+
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= TARGET ================= -->
+
+                <div class="form-group">
+
+                    <label for="targetInput">
+
+                        Website / Phone / UPI / Email
+
+                    </label>
+
+                    <input
+                        id="targetInput"
+                        name="target"
+                        type="text"
+                        placeholder="https://example.com"
+                    >
+
+                </div>
+
+                <!-- ================= SECOND ROW ================= -->
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="incidentDate">
+
+                            Date of Incident
+
+                        </label>
+
+                        <input
+                            id="incidentDate"
+                            name="incidentDate"
+                            type="date"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="amountLost">
+
+                            Estimated Amount Lost
+
+                        </label>
+
+                        <input
+                            id="amountLost"
+                            name="amountLost"
+                            type="number"
+                            placeholder="₹ 0"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- ================= LOCATION ================= -->
+
+                <div class="form-group">
+
+                    <label for="location">
+
+                        Location (Optional)
+
+                    </label>
+
+                    <input
+                        id="location"
+                        name="location"
+                        type="text"
+                        placeholder="City, State"
+                    >
+
+                </div>
+
+                <!-- ================= DESCRIPTION ================= -->
+
+                <div class="form-group">
+
+                    <label for="description">
+
+                        Describe What Happened
+
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        maxlength="2000"
+                        rows="8"
+                        placeholder="Explain what happened in as much detail as possible..."
+                    ></textarea>
+
+                    <small>
+
+                        <span id="charCount">
+
+                            0
+
+                        </span>
+
+                        /2000 Characters
+
+                    </small>
+
+                </div>
+
+                <!-- ================= EVIDENCE ================= -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Upload Evidence
+
+                    </label>
+
+                    <div class="upload-box">
+
+                        <div class="upload-icon">
+
+                            📂
+
+                        </div>
+
+                        <h3>
+
+                            Drag & Drop Your Evidence
+
+                        </h3>
+
+                        <p>
+
+                            Upload screenshots, chat exports, PDFs or images.
+
+                        </p>
+
+                        <small>
+
+                            Supported formats: PNG, JPG, PDF, ZIP (Max 10 MB)
+
+                        </small>
+
+                        <input
+                            type="file"
+                            id="evidence"
+                            multiple
+                            hidden
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- ================= ANONYMOUS ================= -->
+
+                <div class="anonymous-row">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="anonymous"
+                            checked
+                        >
+
+                        Submit this report anonymously
+
+                    </label>
+
+                </div>
+
+                <!-- ================= BUTTON ================= -->
+
+                <button
+                    type="submit"
+                    class="primary-btn submit-btn"
+                >
+
+                    Submit Report →
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
+
+<!-- ==========================================
+            COMMUNITY IMPACT
+========================================== -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Every Report Makes A Difference
+
+            </h2>
+
+            <p>
+
+                ScamRadar grows stronger with every verified report submitted
+                by the community.
+
+            </p>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+
+                <h2>0</h2>
+
+                <span>Reports Submitted</span>
+
+                <small>Waiting for the first report</small>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>0</h2>
+
+                <span>Reports Verified</span>
+
+                <small>Moderator reviewed</small>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>0</h2>
+
+                <span>Users Protected</span>
+
+                <small>Growing every day</small>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>24h</h2>
+
+                <span>Average Review</span>
+
+                <small>Estimated moderation time</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+            WHY REPORT
+========================================== -->
+
+<section class="quick-actions">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Why Report Through ScamRadar?
+
+            </h2>
+
+            <p>
+
+                Every report strengthens our community-powered scam database.
+
+            </p>
+
+        </div>
+
+        <div class="action-grid">
+
+            <div class="action-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        🛡
+
+                    </div>
+
+                    <span class="action-tag">
+
+                        Community
+
+                    </span>
+
+                </div>
+
+                <h3>
+
+                    Protect Others
+
+                </h3>
+
+                <p>
+
+                    Help prevent more people from becoming victims.
+
+                </p>
+
+            </div>
+
+            <div class="action-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        🌍
+
+                    </div>
+
+                </div>
+
+                <h3>
+
+                    Strengthen Community
+
+                </h3>
+
+                <p>
+
+                    Your report improves ScamRadar's threat intelligence.
+
+                </p>
+
+            </div>
+
+            <div class="action-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        ⚡
+
+                    </div>
+
+                </div>
+
+                <h3>
+
+                    Faster Detection
+
+                </h3>
+
+                <p>
+
+                    Identify emerging scams before they spread.
+
+                </p>
+
+            </div>
+
+            <div class="action-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        ✅
+
+                    </div>
+
+                </div>
+
+                <h3>
+
+                    Human Verified
+
+                </h3>
+
+                <p>
+
+                    Every submission is reviewed before publication.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+            REPORTING GUIDELINES
+========================================== -->
+
+<section class="guidelines">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Before You Submit
+
+            </h2>
+
+            <p>
+
+                Follow these simple guidelines to help us review your report
+                faster and improve the quality of the ScamRadar database.
+
+            </p>
+
+        </div>
+
+        <div class="guidelines-grid">
+
+            <div class="guideline-card">
+
+                <div class="guideline-icon">
+
+                    ✔
+
+                </div>
+
+                <h3>
+
+                    Submit Genuine Reports
+
+                </h3>
+
+                <p>
+
+                    Only report scams that you've personally encountered or
+                    verified through reliable evidence.
+
+                </p>
+
+            </div>
+
+            <div class="guideline-card">
+
+                <div class="guideline-icon">
+
+                    🔒
+
+                </div>
+
+                <h3>
+
+                    Protect Your Privacy
+
+                </h3>
+
+                <p>
+
+                    Never upload passwords, OTPs, bank PINs or any sensitive
+                    personal information.
+
+                </p>
+
+            </div>
+
+            <div class="guideline-card">
+
+                <div class="guideline-icon">
+
+                    📷
+
+                </div>
+
+                <h3>
+
+                    Upload Evidence
+
+                </h3>
+
+                <p>
+
+                    Screenshots, chats and payment receipts help moderators
+                    verify reports much faster.
+
+                </p>
+
+            </div>
+
+            <div class="guideline-card">
+
+                <div class="guideline-icon">
+
+                    🛡
+
+                </div>
+
+                <h3>
+
+                    Reports Are Reviewed
+
+                </h3>
+
+                <p>
+
+                    Every submission is checked before becoming visible to
+                    the community.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            LATEST COMMUNITY REPORTS
+========================================== -->
+
+<section class="latest">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Latest Community Reports
+
+            </h2>
+
+            <p>
+
+                Newly verified scam reports submitted by the ScamRadar
+                community will appear here.
+
+            </p>
+
+        </div>
+
+        <div class="report-grid">
+
+            <div class="report-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        🌐
+
+                    </div>
+
+                    <span class="action-tag">
+
+                        Coming Soon
+
+                    </span>
+
+                </div>
+
+                <h3>
+
+                    No Reports Yet
+
+                </h3>
+
+                <p>
+
+                    Once the first verified report is approved,
+                    it'll appear here for everyone to see.
+
+                </p>
+
+                <span class="action-link">
+
+                    Be the first contributor →
+
+                </span>
+
+            </div>
+
+            <div class="report-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        📱
+
+                    </div>
+
+                    <span class="action-tag">
+
+                        Coming Soon
+
+                    </span>
+
+                </div>
+
+                <h3>
+
+                    Community Feed
+
+                </h3>
+
+                <p>
+
+                    Verified reports will automatically populate
+                    this section in real time.
+
+                </p>
+
+                <span class="action-link">
+
+                    Updated automatically
+
+                </span>
+
+            </div>
+
+            <div class="report-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon">
+
+                        🛡
+
+                    </div>
+
+                    <span class="action-tag">
+
+                        Moderated
+
+                    </span>
+
+                </div>
+
+                <h3>
+
+                    Safe Community
+
+                </h3>
+
+                <p>
+
+                    Every submission is reviewed before appearing
+                    publicly to maintain quality.
+
+                </p>
+
+                <span class="action-link">
+
+                    Human verified
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+                CTA
+========================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+
+                Every Scam Report Makes
+                The Internet Safer.
+
+            </h2>
+
+            <p>
+
+                Every verified submission helps protect thousands of users
+                from fraud. Thank you for contributing to the ScamRadar
+                community.
+
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="#report-form" class="primary-btn">
+
+                    Submit Another Report
+
+                </a>
+
+                <a href="reports.html" class="secondary-btn">
+
+                    Browse Community Reports
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+                FOOTER
+========================================== -->
 
 <footer>
 
-    <p>© 2026 ScamRadar</p>
+    <div class="container footer-container">
+
+        <div class="footer-brand">
+
+            <h2>
+
+                🛡 ScamRadar
+
+            </h2>
+
+            <p>
+
+                Community-powered scam detection platform helping users
+                verify suspicious websites, phone numbers, UPI IDs,
+                emails and online fraud before they become victims.
+
+            </p>
+
+            <small>
+
+                © 2026 ScamRadar. All rights reserved.
+
+            </small>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h4>
+
+                Quick Links
+
+            </h4>
+
+            <a href="about.html">
+
+                About
+
+            </a>
+
+            <a href="learn.html">
+
+                Learn
+
+            </a>
+
+            <a href="reports.html">
+
+                Community Reports
+
+            </a>
+
+            <a href="contact.html">
+
+                Contact
+
+            </a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h4>
+
+                Legal
+
+            </h4>
+
+            <a href="privacy.html">
+
+                Privacy Policy
+
+            </a>
+
+            <a href="terms.html">
+
+                Terms of Service
+
+            </a>
+
+            <a href="report.html">
+
+                Report a Scam
+
+            </a>
+
+            <a href="verify.html">
+
+                Verify
+
+            </a>
+
+        </div>
+
+    </div>
 
 </footer>
-
-<script src="js/report.js"></script>
-
-</body>
-</html>

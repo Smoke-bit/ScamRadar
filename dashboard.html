@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | ScamRadar</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <!-- SAME NAVBAR -->
+
+</header>
+
+<!-- ================= DASHBOARD HERO ================= -->
+
+<section class="dashboard-hero">
+
+    <div class="container">
+
+        <div class="dashboard-heading">
+
+            <span class="dashboard-tag">
+                📊 Dashboard
+            </span>
+
+            <h1>
+                Welcome Back.
+            </h1>
+
+            <p>
+                Monitor your scans, security insights and community activity in one place.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🛡</div>
+
+                <h3>Total Verifications</h3>
+
+                <h2 id="totalScans">0</h2>
+
+                <p>Across all supported entities</p>
+
+            </div>
+
+            <div class="stat-card safe">
+                <div class="stat-icon">✅</div>
+
+                <h3>Safe</h3>
+
+                <h2 id="safeScans">0</h2>
+
+                <p>Verified safe</p>
+
+            </div>
+
+            <div class="stat-card suspicious">
+                <div class="stat-icon">⚠️</div>
+
+                <h3>Suspicious</h3>
+
+                <h2 id="suspiciousScans">0</h2>
+
+                <p>Need caution</p>
+
+            </div>
+
+            <div class="stat-card dangerous">
+                <div class="stat-icon">🚨</div>
+
+                <h3>Dangerous</h3>
+
+                <h2 id="dangerousScans">0</h2>
+
+                <p>High risk</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CHARTS ================= -->
+
+<section class="charts-section">
+
+    <div class="container">
+
+        <div class="charts-grid">
+
+            <div class="info-card trend-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>📈 Scan Trend</h2>
+
+                        <p class="card-subtitle">
+                            Last 7 days
+                        </p>
+
+                    </div>
+
+                    <span class="card-badge">
+
+                        Live
+
+                    </span>
+
+                </div>
+
+                <canvas id="trendChart"></canvas>
+
+            </div>
+
+            <div class="info-card threat-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>🛡 Threat Distribution</h2>
+
+                        <p class="card-subtitle">
+
+                            Current overview
+
+                        </p>
+
+                    </div>
+
+                    <span class="card-badge">
+
+                        Updated
+
+                    </span>
+
+                </div>
+
+                <canvas id="threatChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DASHBOARD GRID ================= -->
+
+<section class="dashboard-section">
+
+    <div class="container">
+
+        <div class="dashboard-grid">
+
+            <!-- Recent Searches -->
+
+            <div class="info-card">
+
+                <div class="section-header">
+
+                    <h2>🕒 Recent Searches</h2>
+
+                </div>
+
+                <div id="recentSearches">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">🔍</div>
+
+                        <h3>No Searches Yet</h3>
+
+                        <p>Your recent verifications will appear here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Activity Feed -->
+
+            <div class="info-card">
+
+                <div class="section-header">
+
+                    <h2>⚡ Activity Feed</h2>
+
+                </div>
+
+                <div id="activityFeed">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">⚡</div>
+
+                        <h3>No Activity</h3>
+
+                        <p>Platform activity will appear here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Community Reports -->
+
+            <div class="info-card">
+
+                <div class="section-header">
+
+                    <h2>👥 Community Reports</h2>
+
+                </div>
+
+                <div id="communityReports">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">👥</div>
+
+                        <h3>No Reports Yet</h3>
+
+                        <p>Community scam reports will appear here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= QUICK ACTIONS ================= -->
+
+<section class="actions-section">
+
+    <div class="container">
+
+        <div class="info-card">
+
+            <div class="section-header">
+
+                <h2>🚀 Quick Actions</h2>
+
+            </div>
+
+            <div class="actions-grid">
+
+                <a href="verify.html" class="action-card">
+
+                    <div class="action-icon">🔍</div>
+
+                    <h3>Verify</h3>
+
+                    <p>Scan websites, phone numbers, emails and UPI IDs.</p>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+                <a href="report.html" class="action-card">
+
+                    <div class="action-icon">🚨</div>
+
+                    <h3>Report Scam</h3>
+
+                    <p>Help others by reporting suspicious websites and fraud.</p>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+                <a href="learn.html" class="action-card">
+
+                    <div class="action-icon">📚</div>
+
+                    <h3>Learn</h3>
+
+                    <p>Explore scam awareness guides and security tips.</p>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 ScamRadar • Stay Safe. Stay Informed.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

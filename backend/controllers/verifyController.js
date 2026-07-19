@@ -1,4 +1,8 @@
+import { getDomainInfo } from "../services/domainInfoService.js";
+import { calculateRisk } from "../services/riskEngine.js";
+import { getSSLInfo } from "../services/sslService.js";
 import { checkVirusTotal } from "../services/virusTotalService.js";
+import { analyzeUrl } from "../services/urlHeuristicsService.js";
 import {
     detectInputType,
     verifyWebsite
@@ -23,84 +27,36 @@ export async function verifyEntity(req, res) {
 
         result.virusTotal = vt;
 
-        // ===============================
-        // ScamRadar Risk Engine v1
-        // ===============================
+        const domainInfo = await getDomainInfo(result.domain);
 
-        if (vt && vt.stats) {
+        result.domainInfo = domainInfo;
 
-            const { malicious, suspicious } = vt.stats;
+        // SSL Certificate
+        const sslInfo = await getSSLInfo(result.domain);
+        
+        console.log("SSL INFO:", sslInfo);
 
-            let riskScore = 0;
+        result.ssl = sslInfo;
 
-            // VirusTotal detections
-            riskScore += malicious * 25;
-            riskScore += suspicious * 10;
+        // URL Heuristics
+        const urlAnalysis = analyzeUrl(input);
 
-            // HTTPS
-            if (!result.https) {
-                riskScore += 15;
-            }
+        result.urlHeuristics = urlAnalysis;
+        console.log("BEFORE RISK ENGINE");
+console.log(result);
+        const analysis = calculateRisk(result, vt);
 
-            // Website unreachable
-            if (!result.reachable) {
-                riskScore += 10;
-            }
-
-            // Reputation
-            if (typeof vt.reputation === "number" && vt.reputation < 0) {
-                riskScore += 15;
-            }
-
-            // Limit score to 100
-            riskScore = Math.min(riskScore, 100);
-
-            // Decide Risk Label
-            let risk = "SAFE";
-
-            if (riskScore >= 50) {
-                risk = "DANGEROUS";
-            }
-            else if (riskScore >= 20) {
-                risk = "SUSPICIOUS";
-            }
-
-            result.risk = risk;
-            result.riskScore = riskScore;
-
-            /*
-            saveScan({
-                url: input,
-                risk,
-                reachable: result.reachable,
-                https: result.https,
-                status: result.status,
-                malicious,
-                suspicious,
-                harmless: vt.stats.harmless,
-                scanDate: new Date().toISOString()
-            });
-            */
+        result = {
+            ...result,
+            ...analysis
+        };
+        console.log("AFTER RISK ENGINE");
+console.log(result);
+            
 
         }
 
-        else {
 
-            // VirusTotal returned nothing useful
-            result.risk = "UNKNOWN";
-            result.riskScore = 0;
-
-            result.virusTotal = {
-                stats: {
-                    malicious: 0,
-                    suspicious: 0,
-                    harmless: 0
-                }
-            };
-
-        }
-
-    }
 
     console.log(result);
 
